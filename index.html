@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VALLEYREACH | Digital Growth Agency</title>
+
+    <meta name="description"
+          content="VALLEYREACH helps local businesses and homestays reach more customers through digital marketing.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17251d;
+            background: #f7f8f3;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(247, 248, 243, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e4e7df;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #3f7d4a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #17251d;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #3f7d4a;
+        }
+
+        .nav-button {
+            background: #3f7d4a;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 30px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 7%;
+            background:
+                radial-gradient(circle at 85% 20%, #dcebdc 0, transparent 30%),
+                radial-gradient(circle at 10% 90%, #e8eee0 0, transparent 35%),
+                #f7f8f3;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #e1eddf;
+            color: #35653d;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #3f7d4a;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 20px;
+            color: #59645c;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #3f7d4a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #32653b;
+        }
+
+        .btn-secondary {
+            border: 1px solid #b8c1b8;
+            color: #17251d;
+        }
+
+        .btn-secondary:hover {
+            background: #e9eee7;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #3f7d4a;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.1;
+            margin: 12px 0;
+        }
+
+        .section-title p {
+            color: #657066;
+            font-size: 18px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 19px;
+            color: #59645c;
+        }
+
+        .about-card {
+            background: #edf3e9;
+            padding: 45px;
+            border-radius: 25px;
+        }
+
+        .about-card h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* SERVICES */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #e2e6df;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 40px rgba(30, 50, 35, 0.08);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #657066;
+        }
+
+        /* HOMESTAYS */
+
+        .homestays {
+            background: #17251d;
+            color: white;
+        }
+
+        .homestays .section-title p {
+            color: #b9c5bb;
+        }
+
+        .homestay-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .homestay-card {
+            padding: 35px;
+            border: 1px solid #3a493e;
+            border-radius: 20px;
+            background: #203127;
+        }
+
+        .homestay-card h3 {
+            margin-bottom: 10px;
+            font-size: 23px;
+        }
+
+        .homestay-card p {
+            color: #bec8c0;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: #e8efe5;
+        }
+
+        .contact-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #5e695f;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 7%;
+            background: #111a14;
+            color: #aeb9b0;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 5%;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .about-grid,
+            .services-grid,
+            .homestay-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">VALLEY<span>REACH</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#homestays">Homestays</a></li>
+            <li><a href="#contact" class="nav-button">Let's Talk</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">DIGITAL GROWTH AGENCY</div>
+
+            <h1>
+                Helping local businesses
+                <span>reach more.</span>
+            </h1>
+
+            <p>
+                We help homestays and local businesses attract more
+                customers, build their online presence and grow in the
+                digital world.
+            </p>
+
+            <div class="buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Get Started
+                </a>
+
+                <a href="#services" class="btn btn-secondary">
+                    Explore Services
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <small>About ValleyReach</small>
+            <h2>Local businesses deserve a strong digital presence.</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+                <p>
+                    VALLEYREACH was created to help local businesses
+                    compete and grow in today's digital world.
+                </p>
+
+                <br>
+
+                <p>
+                    From getting discovered online to presenting your
+                    business professionally, we focus on practical
+                    digital solutions that help turn attention into
+                    real customers.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Our goal</h3>
+
+                <p>
+                    Make digital marketing simpler, more affordable
+                    and more useful for local businesses.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="section-title">
+            <small>What We Do</small>
+            <h2>Simple digital solutions that make a difference.</h2>
+            <p>
+                We help businesses build visibility, credibility
+                and customer connections online.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service">
+                <div class="service-icon">🌐</div>
+                <h3>Website Development</h3>
+                <p>
+                    Modern, mobile-friendly websites that make
+                    your business look professional online.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">📱</div>
+                <h3>Social Media</h3>
+                <p>
+                    Build your presence on social platforms and
+                    connect with potential customers.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">📈</div>
+                <h3>Digital Marketing</h3>
+                <p>
+                    Practical digital strategies designed to
+                    increase visibility and reach.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">📍</div>
+                <h3>Local Visibility</h3>
+                <p>
+                    Help customers discover your business when
+                    they are searching locally.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">⭐</div>
+                <h3>Online Reputation</h3>
+                <p>
+                    Present your business professionally and
+                    build trust with potential customers.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">💡</div>
+                <h3>Growth Strategy</h3>
+                <p>
+                    Identify digital opportunities and create
+                    a practical plan for growth.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOMESTAYS -->
+
+    <section class="homestays" id="homestays">
+
+        <div class="section-title">
+            <small>For Homestays</small>
+
+            <h2>
+                Turn your beautiful property into more bookings.
+            </h2>
+
+            <p>
+                We help homestays improve how they appear online
+                and reach travelers looking for their next stay.
+            </p>
+        </div>
+
+        <div class="homestay-grid">
+
+            <div class="homestay-card">
+                <h3>Get discovered</h3>
+                <p>
+                    Improve your online presence so more travelers
+                    can find your property.
+                </p>
+            </div>
+
+            <div class="homestay-card">
+                <h3>Look professional</h3>
+                <p>
+                    Showcase your rooms, location and experience
+                    with a professional digital presence.
+                </p>
+            </div>
+
+            <div class="homestay-card">
+                <h3>Build trust</h3>
+                <p>
+                    Give potential guests the information they need
+                    to feel confident about choosing you.
+                </p>
+            </div>
+
+            <div class="homestay-card">
+                <h3>Get more enquiries</h3>
+                <p>
+                    Create simple ways for interested travelers
+                    to contact your business.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-content">
+
+            <h2>
+                Ready to grow your business?
+            </h2>
+
+            <p>
+                Let's talk about your business and find out
+                how VALLEYREACH can help.
+            </p>
+
+            <div class="buttons" style="justify-content:center;">
+
+                <a href="mailto:hello@valleyreach.com"
+                   class="btn btn-primary">
+                    Email Us
+                </a>
+
+                <a href="#services"
+                   class="btn btn-secondary">
+                    View Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            <strong>VALLEYREACH</strong>
+            <br>
+            Digital Growth Agency
+        </div>
+
+        <div>
+            © 2026 VALLEYREACH. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
